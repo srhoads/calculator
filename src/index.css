@@ -2,11 +2,37 @@ body {
   font: 24px "Century Gothic", Futura, sans-serif;
   /* font: 14px "Cambria", Cambria, Cambria; */
   /* font: 14px "Calibri", Calibri, sans-serif; */
-  margin: 20px;
+  /* margin: 20px; */
   /* margin-left: 50px; */
-  text-align: left;
+  /* text-align: left; */
   /* width: 300; */
   /* margin-left: 900% */
+
+  /* font: 24px "Century Gothic", Futura, sans-serif; */
+  /* font: 14px "Cambria", Cambria, Cambria; */
+  /* font: 27px "Calibri", Calibri, sans-serif; */
+  font: 27px "Verdana", Verdana, sans-serif;
+  
+  margin: 50px;
+  text-indent: -12px;
+  /* margin-left: 50px; */
+  text-align: center;
+  width: 642px;
+  color: rgb(131, 131, 131);
+
+  
+
+  /* text-shadow: 3px 2px rgb(109, 109, 255); */
+  /* -webkit-text-decoration: rgb(15, 30, 118) solid overline; */
+  /* text-decoration:  rgb(19, 26, 104) solid overline; */
+  /* -webkit-text-decoration-skip: objects; */
+  /* text-decoration-skip: objects; */
+
+  /* -webkit-text-decoration: slateblue solid underline; */
+  /* text-decoration: slateblue solid underline; */
+  /* -webkit-text-overline-position: auto; */
+  /* margin-left: 900% */
+
 }
 
 ol, ul {
@@ -60,7 +86,7 @@ ol, ul {
 }
 
 .sideofsquareCSS {
-  background: #fff;
+  background: rgb(246, 246, 254);
   border: 1px solid #999;
   float: left;
   font-size: 24px;
@@ -152,29 +178,30 @@ ol, ul {
 }
 
 
-.result {
+/* .result {
   height: 60px;
   background-color: rgb(255, 255, 255);
   width: 300;
-}
+} */
 
-.result p {
+/* .result p {
   font-size: 40px;
   margin: 5px;
   width: 300;
 
-}
+} */
 
 .resultCSS {
   height: 80px;
   margin-top: 25px;
+  margin-bottom: 10px;
   margin-left: 1px;
-  background-color: rgb(243, 244, 255);
-  width: 630px;
+  background-color: rgb(255, 255, 255);
+  width: 627px;
   border-radius: 45px;
   text-align: center;
   line-height: 67px;
-  border: 2px solid #999;
+  border: 1.5px solid #999;
 
 }
 

@@ -3,65 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
+/*
+NOTES:
 
+- For stuff like log(num), I wanna use a regular expression to capture & erase the log() part, without erasing the digit within, but idk the regex in node js
+- Use text input IN ADDITION to button input, so like typing nums or deleting them & stuff, and updating the input dynamically
 
+*/
 
-// <div className="board-row">
-// <button className="squareCSS" name="1" onClick={e => this.props.onClick(e.target.name)}>1</button>
-// <button className="squareCSS" name='2' onClick={e => this.props.onClick(e.target.name)}>2</button>
-// <button className="squareCSS" name='3' onClick={e => this.props.onClick(e.target.name)}>3</button>
-// </div>
-
-// <div className="board-row">
-// <button className="squareCSS" name="4" onClick={e => this.props.onClick(e.target.name)}>4</button>
-// <button className="squareCSS" name="5" onClick={e => this.props.onClick(e.target.name)}>5</button>
-// <button className="squareCSS" name="6" onClick={e => this.props.onClick(e.target.name)}>6</button>
-// <div className="board-row">
-// </div>
-
-// <div className="board-row">
-// <button className="squareCSS" name="7" onClick={e => this.props.onClick(e.target.name)}>7</button>
-// <button className="squareCSS" name="8" onClick={e => this.props.onClick(e.target.name)}>8</button>
-// <button className="squareCSS" name="9" onClick={e => this.props.onClick(e.target.name)}>9</button>
-// </div>
-
-// <br></br>
-
-// <div className="board-row">
-// <button className="squareOperators" name='+' onClick={e => this.props.onClick(e.target.name)}>+</button>
-// <button name="-" className="squareOperators" onClick={e => this.props.onClick(e.target.name)}>-</button><br />
-// <button className="squareOperators">÷</button>
-// <button className="squareOperators">%</button>
-// <button className="squareOperators">(</button>
-// <button className="squareOperators">)</button>
-// </div>
-
-// <div className="board-row">
-// <button className="squareOperators">√</button>
-// <button className="squareCE" name='CE' onClick={e => this.props.onClick(e.target.name)}>CE</button>
-// <button className="squareEqual" name='=' onClick={e => this.props.onClick(e.target.name)}>=</button>
-// </div>  
-
-function factorialize(num) {
-    // If the number is less than 0, reject it.
-    if (num < 0)
-        return -1;
-
-    // If the number is 0, its factorial is 1.
-    else if (num === 0)
-        return 1;
-
-    // Otherwise, call the recursive procedure again
-    else {
-        return (num * factorialize(num - 1));
-    }
+function factorialFXN(num) {
+    if (num < 0) return ((num * -1) * factorialFXN((num * -1) - 1)) * -1; //return -1;  // If the number is less than 0, reject it.
+    else if (num === 0 || num === '0') return 1; // factorial of 0 is 1
+    else return (num * factorialFXN(num - 1));
 }
 
 
-
 class BoardRC extends React.Component {
-
-
 
     render() {
         return (
@@ -112,6 +69,7 @@ class BoardRC extends React.Component {
                     <button className="sideofsquareCSS" name="π" onClick={e => this.props.onClick(e.target.name)}>π</button>
                     <button className="squareEqual" name="=" onClick={e => this.props.onClick(e.target.name)}>=</button>
                 </div>
+                
 
                 <div className="board-row">
                     <button className="sideofsquareCSS" name="sin" onClick={e => this.props.onClick(e.target.name)}>sin</button>
@@ -121,6 +79,11 @@ class BoardRC extends React.Component {
                           {/* <button className="sideofsquareCSS" name="." onClick={e => this.props.onClick(e.target.name)}>.</button> */}
                     <button className="squareCE" name="CE" onClick={e => this.props.onClick(e.target.name)}>CE</button>
                 </div>
+                <div className="board-row"> 
+                    {/* <input className="squareInputCalculations" type="text" name="title" value={this.state.value} onChange={this.handleChange}></input> */}
+                    {/* <input className="squareInputCalculations" type="text" name="title" onChange={e => this.props.onChange(e.target.name)}></input> */}
+                </div>
+
             </div>
         );
     }
@@ -148,33 +111,25 @@ class ResultRC extends React.Component {
 
 
 
-
-
-
-
-
 class App extends React.Component {
     constructor() {
         super();
 
         this.state = {
             resultPROP: ""
-        }
+        };
+
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
+    
 
     onClick = button => {
 
-        if (button === "=") {
-            this.calculate()
-        }
+        if (button === "=") this.calculate()
 
-        else if (button === "CE") {
-            this.reset()
-        }
-        // else if(button === "CE"){
-        //     this.backspace()
-        // }
-
+        else if (button === "CE") this.reset()
+        
         else {
             this.setState({
                 resultPROP: this.state.resultPROP + button
@@ -182,84 +137,107 @@ class App extends React.Component {
         }
     };
 
+    // handleChange(event) {
+    //     this.setState({ resultPROP: event.target.resultPROP });
+    // }
+
+    // handleSubmit(event) {
+    //     alert('A name was submitted: ' + this.state.resultPROP);
+    //     event.preventDefault();
+    // }
+
+
+
+    // calculatetxt = () => {
+    //     var isResultGarbage = ''
+
+    // }
+
 
     calculate = () => {
-        var isResultGarage = ''
+        var isResultGarbage = ''
 
         if (this.state.resultPROP.includes('--')) {
-            isResultGarage = this.state.resultPROP.replace('--', '+')
+            isResultGarbage = this.state.resultPROP.replace('--', '+')
         }
 
         else if (this.state.resultPROP.includes('%')) {
-            isResultGarage = this.state.resultPROP.replace('%', '*100')
+            isResultGarbage = this.state.resultPROP.replace('%', '*100')
         }
 
         else if (this.state.resultPROP.includes('π')) {
-            isResultGarage = this.state.resultPROP.replace('*π', '').replace('π', '') * Math.PI
+            isResultGarbage = this.state.resultPROP.replace('*π', '').replace('π', '') * Math.PI
         }
 
         else if (this.state.resultPROP.includes('log')) {
-            isResultGarage = Math.log(this.state.resultPROP.replace('log', '').replace(/^\(/g, '').replace(/\)$/g, ''))
+            isResultGarbage = Math.log(this.state.resultPROP.replace('log', '').replace(/^\(/g, '').replace(/\)$/g, ''))
         }
 
         else if (this.state.resultPROP.includes('abs')) {
-            isResultGarage = Math.abs(this.state.resultPROP.replace('abs', '').replace(/\|/g, ''))
+            isResultGarbage = Math.abs(this.state.resultPROP.replace('abs', '').replace(/\|/g, ''))
         }
 
         // else if (this.state.resultPROP.includes('ln')) {
-        //   isResultGarage = Math.LN10(this.state.resultPROP.replace('ln', ''))
+        //   isResultGarbage = Math.LN10(this.state.resultPROP.replace('ln', ''))
         // }
 
         else if (this.state.resultPROP.includes('sin')) {
-            isResultGarage = Math.sin(this.state.resultPROP.replace('sin', ''))
+            isResultGarbage = Math.sin(this.state.resultPROP.replace('sin', ''))
         }
 
         else if (this.state.resultPROP.includes('cos')) {
-            isResultGarage = Math.cos(this.state.resultPROP.replace('cos', ''))
+            isResultGarbage = Math.cos(this.state.resultPROP.replace('cos', ''))
         }
 
         else if (this.state.resultPROP.includes('tan')) {
-            isResultGarage = Math.tan(this.state.resultPROP.replace('tan', ''))
+            isResultGarbage = Math.tan(this.state.resultPROP.replace('tan', ''))
         }
 
 
         // else if (this.state.resultPROP.includes('ln')) {
-        // isResultGarage = Math.ln(this.state.resultPROP.replace('ln', ''))
+        // isResultGarbage = Math.ln(this.state.resultPROP.replace('ln', ''))
         // }
 
         // else if (this.state.resultPROP.includes('log')) {
-        // isResultGarage = Math.log(this.state.resultPROP.replace('\\([[:digit:]]\\)|log', ''))
+        // isResultGarbage = Math.log(this.state.resultPROP.replace('\\([[:digit:]]\\)|log', ''))
         // }
 
         else if (this.state.resultPROP.includes('√')) {
-            isResultGarage = Math.sqrt(this.state.resultPROP.replace('√', ''))
+            isResultGarbage = Math.sqrt(this.state.resultPROP.replace('√', ''))
         }
 
         else if (this.state.resultPROP.includes('²')) {
-            isResultGarage = this.state.resultPROP.replace('²', '') * this.state.resultPROP.replace('²', '')
+            isResultGarbage = this.state.resultPROP.replace('²', '') * this.state.resultPROP.replace('²', '')
         }
 
         else if (this.state.resultPROP.includes('!')) {
-            isResultGarage = factorialize(this.state.resultPROP.replace('!', ''))
+            isResultGarbage = factorialFXN(this.state.resultPROP.replace('!', ''))
         }
 
         else {
-            isResultGarage = this.state.resultPROP
+            isResultGarbage = this.state.resultPROP
         }
+
 
         try {
             this.setState({
                 // eslint-disable-next-line
-                resultPROP: ((eval(isResultGarage) || "") + "").replace(/^$/, 0)
+                resultPROP: ((eval(isResultGarbage) || "") + "").replace(/^$/, 0)
             })
-
 
         } catch (e) {
             this.setState({
                 resultPROP: "Oh crap! You literally broke it"
             })
-
         }
+
+        // if(button === null && input != null){
+        //     this.setState({
+        //         resultPROP: input
+        //     })
+        // }
+
+        
     };
 
     reset = () => {
@@ -278,7 +256,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="calculator-body">
-                    <h1>srhoads' calculator</h1>
+                    <h1>srhoads' calculator!</h1>
                     <ResultRC resultPROP={this.state.resultPROP} />
                     <BoardRC onClick={this.onClick} />
                 </div>
@@ -413,19 +391,19 @@ ReactDOM.render(
 
 
 //   calculateFXN = () => {
-//     var isResultGarage = ''
+//     var isResultGarbage = ''
 //     if(this.state.resultPROP.includes('--')){
-//         isResultGarage = this.state.resultPROP.replace('--','+')
+//         isResultGarbage = this.state.resultPROP.replace('--','+')
 //     }
 
 //     else {
-//         isResultGarage = this.state.resultPROP
+//         isResultGarbage = this.state.resultPROP
 //     }
 
 //     try {
 //       this.setState({
 //         // eslint-disable-next-line
-//         resultPROP: (eval(isResultGarage) || "") + ""
+//         resultPROP: (eval(isResultGarbage) || "") + ""
 //       })
 //     } catch (e) {
 //       this.setState({
