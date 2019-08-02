@@ -1,5 +1,5 @@
 body {
-  font: 24px "Century Gothic", Futura, sans-serif;
+  /* font: 24px "Century Gothic", Futura, sans-serif; */
   /* font: 14px "Cambria", Cambria, Cambria; */
   /* font: 14px "Calibri", Calibri, sans-serif; */
   /* margin: 20px; */
@@ -14,7 +14,7 @@ body {
   font: 27px "Verdana", Verdana, sans-serif;
   
   margin: 50px;
-  text-indent: -12px;
+  text-indent: -27px;
   /* margin-left: 50px; */
   text-align: center;
   width: 642px;
@@ -51,13 +51,13 @@ ol, ul {
   /* font-weight: bold; */
 }
 
-.squareInputCalculations {
-  background: #fff;
+/* .squareInputCalculations { */
+  /* background: #fff;
   border: 2px solid #999;
   float: left;
-  font-size: 30px;
+  font-size: 30px; */
   /* font-weight: bold; */
-  line-height: 90px;
+  /* line-height: 90px;
   height: 80px;
   margin-right: 15px;
   margin-top: 15px;
@@ -66,7 +66,7 @@ ol, ul {
   text-align: right;
   width: 637px;
   border-radius: 10px;
-}
+} */
 
 
 .squareCSS {
@@ -151,28 +151,28 @@ ol, ul {
   border-radius: 25px;
 }
 
-.resultzs{
-  background: #e1eef8ea;
+/* .resultzs{ */
+  /* background: #e1eef8ea; */
   /* border: 1px solid #d7dce0ea; */
-  float: left;
-  font-size: 24px;
+  /* float: left; */
+  /* font-size: 24px; */
   /* font-weight: bold; */
-  line-height: 95px;
+  /* line-height: 95px;
   height: 100px;
   margin-right: 5px;
   margin-top: 5px;
   padding: 0;
   text-align: center;
   width: 310px;
-  border-radius: 25px;
-}
+  border-radius: 25px; */
+/* } */
 
 .square:focus {
   outline: none;
 }
 
 
-.calculator-body {
+.calcbodCSS {
   max-width: 1200px;
   margin: auto;
 }
@@ -205,7 +205,7 @@ ol, ul {
 
 }
 
-.resultCSS p {
+.resultCSS p {  /* // Q for alejandro: what's this with the p? */
   font-size: 40px;
   margin: 5px;
   width: 300;
@@ -220,9 +220,9 @@ ol, ul {
   flex-direction: row;
 }
 
-.game-info {
+/* .game-info {
   margin-left: 20px;
-}
+} */
 
 
 
