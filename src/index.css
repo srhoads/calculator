@@ -1,0 +1,250 @@
+body {
+  font: 24px "Century Gothic", Futura, sans-serif;
+  /* font: 14px "Cambria", Cambria, Cambria; */
+  /* font: 14px "Calibri", Calibri, sans-serif; */
+  margin: 20px;
+  /* margin-left: 50px; */
+  text-align: left;
+  /* width: 300; */
+  /* margin-left: 900% */
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.statusCSS {
+  margin-bottom: 10px;
+  font-size: 30px;
+  /* font-weight: bold; */
+}
+
+.squareInputCalculations {
+  background: #fff;
+  border: 2px solid #999;
+  float: left;
+  font-size: 30px;
+  /* font-weight: bold; */
+  line-height: 90px;
+  height: 80px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 95;
+  padding: 20;
+  text-align: right;
+  width: 637px;
+  border-radius: 10px;
+}
+
+
+.squareCSS {
+  background: #e1e5e9ea;
+  border: 1px solid #e1e5e9ea;
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 100px;
+  margin-right: 2px;
+  margin-top: 2px;
+  padding: 0;
+  text-align: center;
+  width: 210px;
+  border-radius: 10px;
+}
+
+.sideofsquareCSS {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 100px;
+  margin-right: 2px;
+  margin-top: 2px;
+  padding: 0;
+  text-align: center;
+  width: 105px;
+  border-radius: 20px;
+}
+
+
+.squareOperators{
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 50;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+  border-radius: 25px;
+}
+
+.squareEqual{
+  background: #e9fae4;
+  /* border: 1px solid #d7dce0ea; */
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 100px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  width: 209px;
+  border-radius: 25px;
+}
+
+
+.squareCE{
+  background: #e1eef8ea;
+  /* border: 1px solid #d7dce0ea; */
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 100px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  width: 310px;
+  border-radius: 25px;
+}
+
+.resultzs{
+  background: #e1eef8ea;
+  /* border: 1px solid #d7dce0ea; */
+  float: left;
+  font-size: 24px;
+  /* font-weight: bold; */
+  line-height: 95px;
+  height: 100px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  width: 310px;
+  border-radius: 25px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+
+.calculator-body {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.result {
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  width: 300;
+}
+
+.result p {
+  font-size: 40px;
+  margin: 5px;
+  width: 300;
+
+}
+
+.resultCSS {
+  height: 80px;
+  margin-top: 25px;
+  margin-left: 1px;
+  background-color: rgb(243, 244, 255);
+  width: 630px;
+  border-radius: 45px;
+  text-align: center;
+  line-height: 67px;
+  border: 2px solid #999;
+
+}
+
+.resultCSS p {
+  font-size: 40px;
+  margin: 5px;
+  width: 300;
+}
+
+.kbd-navigation .square:focus {
+  background: #d0d4f0b6;
+}
+
+.overallappCSS {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.result {
+  height: 60px;
+  background-color: #bbb;
+  width: 300;
+}
+
+.result p {
+  font-size: 40px;
+  margin: 5px;
+  width: 300;
+
+}
+
+.calculator-body {
+  max-width: 900px;
+  margin: auto;
+}
+
+.button {
+  display: block;
+  background-color: #bbb;
+}
+
+button {
+  width: 25%;
+  height: 60px;
+  font-size: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
