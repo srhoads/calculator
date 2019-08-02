@@ -184,78 +184,79 @@ class App extends React.Component {
 
 
     calculate = () => {
-        var checkResult = ''
+        var isResultGarage = ''
 
         if (this.state.resultPROP.includes('--')) {
-            checkResult = this.state.resultPROP.replace('--', '+')
+            isResultGarage = this.state.resultPROP.replace('--', '+')
         }
 
         else if (this.state.resultPROP.includes('%')) {
-            checkResult = this.state.resultPROP.replace('%', '*100')
+            isResultGarage = this.state.resultPROP.replace('%', '*100')
         }
 
         else if (this.state.resultPROP.includes('π')) {
-            checkResult = this.state.resultPROP.replace('*π', '').replace('π', '') * Math.PI
+            isResultGarage = this.state.resultPROP.replace('*π', '').replace('π', '') * Math.PI
         }
 
         else if (this.state.resultPROP.includes('log')) {
-            checkResult = Math.log(this.state.resultPROP.replace('log', '').replace(/^\(/g, '').replace(/\)$/g, ''))
+            isResultGarage = Math.log(this.state.resultPROP.replace('log', '').replace(/^\(/g, '').replace(/\)$/g, ''))
         }
 
         else if (this.state.resultPROP.includes('abs')) {
-            checkResult = Math.abs(this.state.resultPROP.replace('abs', '').replace(/\|/g, ''))
+            isResultGarage = Math.abs(this.state.resultPROP.replace('abs', '').replace(/\|/g, ''))
         }
 
         // else if (this.state.resultPROP.includes('ln')) {
-        //   checkResult = Math.LN10(this.state.resultPROP.replace('ln', ''))
+        //   isResultGarage = Math.LN10(this.state.resultPROP.replace('ln', ''))
         // }
 
         else if (this.state.resultPROP.includes('sin')) {
-            checkResult = Math.sin(this.state.resultPROP.replace('sin', ''))
+            isResultGarage = Math.sin(this.state.resultPROP.replace('sin', ''))
         }
 
         else if (this.state.resultPROP.includes('cos')) {
-            checkResult = Math.cos(this.state.resultPROP.replace('cos', ''))
+            isResultGarage = Math.cos(this.state.resultPROP.replace('cos', ''))
         }
 
         else if (this.state.resultPROP.includes('tan')) {
-            checkResult = Math.tan(this.state.resultPROP.replace('tan', ''))
+            isResultGarage = Math.tan(this.state.resultPROP.replace('tan', ''))
         }
 
 
         // else if (this.state.resultPROP.includes('ln')) {
-        // checkResult = Math.ln(this.state.resultPROP.replace('ln', ''))
+        // isResultGarage = Math.ln(this.state.resultPROP.replace('ln', ''))
         // }
 
         // else if (this.state.resultPROP.includes('log')) {
-        // checkResult = Math.log(this.state.resultPROP.replace('\\([[:digit:]]\\)|log', ''))
+        // isResultGarage = Math.log(this.state.resultPROP.replace('\\([[:digit:]]\\)|log', ''))
         // }
 
         else if (this.state.resultPROP.includes('√')) {
-            checkResult = Math.sqrt(this.state.resultPROP.replace('√', ''))
+            isResultGarage = Math.sqrt(this.state.resultPROP.replace('√', ''))
         }
 
         else if (this.state.resultPROP.includes('²')) {
-            checkResult = this.state.resultPROP.replace('²', '') * this.state.resultPROP.replace('²', '')
+            isResultGarage = this.state.resultPROP.replace('²', '') * this.state.resultPROP.replace('²', '')
         }
 
         else if (this.state.resultPROP.includes('!')) {
-            checkResult = factorialize(this.state.resultPROP.replace('!', ''))
+            isResultGarage = factorialize(this.state.resultPROP.replace('!', ''))
         }
 
-
         else {
-            checkResult = this.state.resultPROP
+            isResultGarage = this.state.resultPROP
         }
 
         try {
             this.setState({
                 // eslint-disable-next-line
-                resultPROP: (eval(checkResult) || "") + ""
+                resultPROP: ((eval(isResultGarage) || "") + "").replace(/^$/, 0)
             })
+
+
         } catch (e) {
             this.setState({
-                resultPROP: "error"
+                resultPROP: "Oh crap! You literally broke it"
             })
 
         }
@@ -412,19 +413,19 @@ ReactDOM.render(
 
 
 //   calculateFXN = () => {
-//     var checkResult = ''
+//     var isResultGarage = ''
 //     if(this.state.resultPROP.includes('--')){
-//         checkResult = this.state.resultPROP.replace('--','+')
+//         isResultGarage = this.state.resultPROP.replace('--','+')
 //     }
 
 //     else {
-//         checkResult = this.state.resultPROP
+//         isResultGarage = this.state.resultPROP
 //     }
 
 //     try {
 //       this.setState({
 //         // eslint-disable-next-line
-//         resultPROP: (eval(checkResult) || "") + ""
+//         resultPROP: (eval(isResultGarage) || "") + ""
 //       })
 //     } catch (e) {
 //       this.setState({
