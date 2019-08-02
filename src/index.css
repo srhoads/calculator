@@ -1,9 +1,7 @@
 body {
-  /* font: 24px "Century Gothic", Futura, sans-serif; */
-  /* font: 14px "Cambria", Cambria, Cambria; */
-  /* font: 14px "Calibri", Calibri, sans-serif; */
+  /*  */
   /* margin: 20px; */
-  /* margin-left: 50px; */
+  margin-left: 500px;   /* abnoxious it wont move the calculator right  */ 
   /* text-align: left; */
   /* width: 300; */
   /* margin-left: 900% */
@@ -20,7 +18,6 @@ body {
   width: 642px;
   color: rgb(131, 131, 131);
 
-  
 
   /* text-shadow: 3px 2px rgb(109, 109, 255); */
   /* -webkit-text-decoration: rgb(15, 30, 118) solid overline; */
@@ -36,37 +33,20 @@ body {
 }
 
 ol, ul {
-  padding-left: 30px;
+  padding-left: 40px;
 }
-
-.board-row:after {
+.boardRowCSS:after { /* after what? */
   clear: both;
   content: "";
   display: table;
 }
 
 .statusCSS {
-  margin-bottom: 10px;
+  margin-bottom: 10px;  /* yay this margin did something */
   font-size: 30px;
   /* font-weight: bold; */
 }
 
-/* .squareInputCalculations { */
-  /* background: #fff;
-  border: 2px solid #999;
-  float: left;
-  font-size: 30px; */
-  /* font-weight: bold; */
-  /* line-height: 90px;
-  height: 80px;
-  margin-right: 15px;
-  margin-top: 15px;
-  margin-bottom: 95;
-  padding: 20;
-  text-align: right;
-  width: 637px;
-  border-radius: 10px;
-} */
 
 
 .squareCSS {
@@ -102,22 +82,6 @@ ol, ul {
 }
 
 
-.squareOperators{
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  /* font-weight: bold; */
-  line-height: 95px;
-  height: 50;
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 0;
-  text-align: center;
-  width: 100px;
-  border-radius: 25px;
-}
-
 .squareEqual{
   background: #e9fae4;
   /* border: 1px solid #d7dce0ea; */
@@ -151,23 +115,7 @@ ol, ul {
   border-radius: 25px;
 }
 
-/* .resultzs{ */
-  /* background: #e1eef8ea; */
-  /* border: 1px solid #d7dce0ea; */
-  /* float: left; */
-  /* font-size: 24px; */
-  /* font-weight: bold; */
-  /* line-height: 95px;
-  height: 100px;
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 0;
-  text-align: center;
-  width: 310px;
-  border-radius: 25px; */
-/* } */
-
-.square:focus {
+.square:focus {  /* what's focus? */
   outline: none;
 }
 
@@ -177,19 +125,6 @@ ol, ul {
   margin: auto;
 }
 
-
-/* .result {
-  height: 60px;
-  background-color: rgb(255, 255, 255);
-  width: 300;
-} */
-
-/* .result p {
-  font-size: 40px;
-  margin: 5px;
-  width: 300;
-
-} */
 
 .resultCSS {
   height: 80px;
@@ -204,10 +139,9 @@ ol, ul {
   border: 1.5px solid #999;
 
 }
-
-.resultCSS p {  /* // Q for alejandro: what's this with the p? */
+.resultCSS p {  /*  Q for alejandro: what's this with the p? */
   font-size: 40px;
-  margin: 5px;
+  margin: 5px; /* i feel like the margin params aren't doing anything */
   width: 300;
 }
 
@@ -220,9 +154,6 @@ ol, ul {
   flex-direction: row;
 }
 
-/* .game-info {
-  margin-left: 20px;
-} */
 
 
 
