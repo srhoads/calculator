@@ -165,6 +165,10 @@ class App extends React.Component {
             isResultGarbage = this.state.resultPROP.replace('%', '*100')
         }
 
+        else if (this.state.resultPROP.includes('÷')) {
+            isResultGarbage = this.state.resultPROP.replace('÷', '/')
+        }
+
         // not super pleased with this pi guy vv
         else if (this.state.resultPROP.includes('π')) {
             isResultGarbage = this.state.resultPROP.replace('*π', '').replace('π', '') * Math.PI
