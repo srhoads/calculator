@@ -6,7 +6,7 @@
     "r-script": "0.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "tsutils": "^3.14.1",
     "typescript": "^3.5.3"
   },
